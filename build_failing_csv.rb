@@ -32,8 +32,8 @@ class FailingCsvBuilder
           "PROJECT_NAME=#{PROJECT_NAME} " \
           "BRANCH=#{BRANCH} " \
           "BUILD_NUMBER=#{BUILD_NUMBER} " \
-          "fetch_rspec_xml.sh"
-    `cmd`
+          "./fetch_rspec_xml.sh"
+    `#{cmd}`
   end
 
   def xml_filenames
