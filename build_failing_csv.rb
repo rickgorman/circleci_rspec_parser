@@ -11,7 +11,7 @@ class FailingCsvBuilder
 
   def run
     clear_tmp_files
-    get_xml_files
+    download_xml_files
 
     build_csv(rspec_xml_to_error_count_by_filename_array)
   end
@@ -24,7 +24,7 @@ class FailingCsvBuilder
     end
   end
 
-  def get_xml_files
+  def download_xml_files
     # this ensures that the string of commands in the script are properly pipelined
     cmd = "CIRCLE_TOKEN=#{CIRCLE_TOKEN} " \
           "VCS_NAME=#{VCS_NAME} " \
