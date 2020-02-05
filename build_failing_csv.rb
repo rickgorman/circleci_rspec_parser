@@ -7,6 +7,7 @@ class FailingCsvBuilder
   USERNAME = ENV["USERNAME"]
   PROJECT_NAME = ENV["PROJECT_NAME"]
   BUILD_NUMBER = ENV["BUILD_NUMBER"] || "latest"
+  BRANCH = ENV["BRANCH"]
 
   def run
     clear_tmp_files
@@ -29,6 +30,7 @@ class FailingCsvBuilder
           "VCS_NAME=#{VCS_NAME} " \
           "USERNAME=#{USERNAME} " \
           "PROJECT_NAME=#{PROJECT_NAME} " \
+          "BRANCH=#{BRANCH} " \
           "BUILD_NUMBER=#{BUILD_NUMBER} " \
           "fetch_rspec_xml.sh"
     `cmd`
